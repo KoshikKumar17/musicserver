@@ -1,0 +1,31 @@
+# (c) Koshik Kumar - https://github.com/KoshikKumar17
+name = "musicserver"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+# fetch() always goes to the public internet (fixes error 1042 when calling another workers.dev Worker)
+compatibility_flags = ["global_fetch_strictly_public"]
+
+# Persistent index (survives restarts, redeploys and every git commit).
+[[d1_databases]]
+binding = "DB"
+database_name = "musicserver"
+database_id = "YOUR_D1_DATABASE_ID"
+
+# For Cloudflare logs --start---
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+invocation_logs = true
+persist = true
+
+[observability.traces]
+enabled = true
+head_sampling_rate = 1
+persist = true
+
+[observability.issue_detection]
+enabled = true
+# Cloudflare logs ---end--- Can be removed on choice of user
+
+# Optional: [vars]  SAAVN_API = "https://your-metadata-api/api/songs"
+# Secrets (set with `wrangler secret put`): TELEGRAM_TOKEN, GROUP_ID
