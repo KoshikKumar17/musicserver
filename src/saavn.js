@@ -2,7 +2,7 @@ import { AppError } from './errors.js';
 import { safeFetch, readBytes, MAX_FILE_BYTES } from './http.js';
 
 const DEFAULT_API = 'https://jiosaavnsearch-up.koshikkumar17.workers.dev/api/songs';
-const FALLBACK_COVER = 'https://i.ibb.co/Kb7nMgQ/saavn-cli.jpg';
+const FALLBACK_COVER = 'https://i.ibb.co/yFGY5kng/ef-Ajp5-BPji-Bj.png';
 const MAX_COVER_BYTES = 5_000_000;
 
 const ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ' };
